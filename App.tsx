@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, TouchableOpacity, View } from "react-native";
+import tw from "./src/lib/tailwindConfig";
+import { useDeviceContext, useAppColorScheme } from "twrnc";
+import { NavigationContainer } from "@react-navigation/native";
+import RootNavigation from "./src/navigators/RootNavigation";
+import React from "react";
 
 export default function App() {
+
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={tw`flex-1 pt-7 bg-white dark:bg-black`}>
+     
+
+      <NavigationContainer>
+        <RootNavigation key={tw.memoBuster} />
+      </NavigationContainer>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
